@@ -38,7 +38,7 @@ app.post('/userupdate', async (req, res) => {
      const email = req.body.email
      const password = req.body.password
 
-    Kyle_user.updateOne({name},  
+    Kyle_user.findOneAndUpdate({name},  
         {email, password}, null, function (err, docs) { 
         if (err){ 
             console.log(err) 
