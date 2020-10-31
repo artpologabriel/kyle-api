@@ -10,7 +10,6 @@ const Xlist = mongoose.model('Xlist', {
     reason: {
         unique: true,
         type: String,
-        required: true,
         trim: true,
         lowercase: true,
         // validate(value) {
