@@ -33,7 +33,7 @@ app.get('/userex/:id', async (req, res) => {
     try {
         const xlist = await  Xlist.findById(id)
 
-            res.send(kyle_user)
+            res.send(xlist)
     } catch (e) {
         res.status(404).send()
     }
