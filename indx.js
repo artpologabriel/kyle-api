@@ -27,7 +27,7 @@ app.get('/viewexs', (req, res) => {
     })   
 })
 
-app.get('/userex/:id', async (req, res) => {
+app.get('/userexs/:id', async (req, res) => {
     const id = req.params.id
 
     try {
