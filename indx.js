@@ -20,8 +20,8 @@ app.post('/userex', (req, res) => {
 })
 
 app.get('/viewex', (req, res) => {
-    Xlist.find({}).then( (users) => {
-       res.send(users)
+    Xlist.find({}).then( (xlist) => {
+       res.send(xlist)
     }).catch( (e) => {
        res.send(e)
     })   
