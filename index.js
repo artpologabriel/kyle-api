@@ -51,21 +51,7 @@ app.post('/teleport', async (req, res) => {
     }); 
 
 
-    /*
-     const ported = await MapPosition.updateOne({ u_id: u_id }, {
-        x_pos: x_pos,
-        z_pos: z_pos
-      });
-
-      try{
-          res.send(ported)
-      }catch (e){
-            res.status(400).send()
-      }
-
-    //res.send(req.body.u_id)
-    console.log(ported)
-    */
+  
 
 })
 
