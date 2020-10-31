@@ -1,5 +1,5 @@
 const express = require('express')
-const { updateOne } = require('./models/xuser')
+
 require('./db/mongoose')
 const Xlist = require('./models/xuser')
 
