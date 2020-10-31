@@ -19,7 +19,7 @@ app.post('/userex', (req, res) => {
     })
 })
 
-app.get('/viewex', (req, res) => {
+app.get('/viewexs', (req, res) => {
     Xlist.find({}).then( (users) => {
        res.send(users)
     }).catch( (e) => {
