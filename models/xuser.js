@@ -22,7 +22,7 @@ const Xlist = mongoose.model('Kyle_user', {
     date: {
         type: String,
         required: true,
-        minlength: 7,
+        // minlength: 7,
         trim: true,
         validate(value) {
             if (value.toLowerCase().includes('password')) {
