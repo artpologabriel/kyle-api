@@ -8,6 +8,7 @@ const Kyle_user = mongoose.model('Kyle_user', {
         trim: true
     },
     email: {
+        unique: true,
         type: String,
         required: true,
         trim: true,
