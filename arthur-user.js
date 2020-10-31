@@ -37,9 +37,10 @@ app.post('/userupdate', async (req, res) => {
      const _id  = req.body._id
      const email = req.body.email
      const password = req.body.password
+     const name = req.body.name
 
     Kyle_user.findOneAndUpdate({_id},  
-        {email, password}, null, function (err, docs) { 
+        {email, password , name}, null, function (err, docs) { 
         if (err){ 
             console.log(err) 
             res.status(400).send()
