@@ -7,8 +7,8 @@ const port = process.env.PORT || 3000
 
 app.use(express.json())
 
-app.post('/users', (req, res) => {
-    const kyle_user = new kyle_user(req.body)
+app.post('/user', (req, res) => {
+    const kyle_user = new User(req.body)
 
     user.save().then(() => {
         res.send(kyle_user)
