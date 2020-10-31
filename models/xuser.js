@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 
-const Xlist = mongoose.model('Kyle_user', {
+const Xlist = mongoose.model('Xlist', {
     name: {
         type: String,
         required: true,
