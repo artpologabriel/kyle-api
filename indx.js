@@ -28,10 +28,10 @@ app.get('/viewexs', (req, res) => {
 })
 
 app.get('/userexs/:id', async (req, res) => {
-    const _id = req.params.id
+    const id = req.params.id
 
     try {
-        const xlist = await Xlist.findById(_id)
+        const xlist = await Xlist.findById(id)
 
             res.send(xlist)
     } catch (e) {
