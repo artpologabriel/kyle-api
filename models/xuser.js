@@ -19,7 +19,7 @@ const Xlist = mongoose.model('Kyle_user', {
             }
         }
     },
-    password: {
+    date: {
         type: String,
         required: true,
         // minlength: 7,
