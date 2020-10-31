@@ -17,6 +17,20 @@ app.post('/user', (req, res) => {
     })
 })
 
+app.get('/user/:id', (req, res) => {
+    const id = req.params.id
+
+    try {
+        const kyle_user = await  Kyle_user.findById(id)
+
+            res.send(kyle_user)
+    } catch (e) {
+        res.status(404).send()
+    }
+
+})
+
+
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
 })
