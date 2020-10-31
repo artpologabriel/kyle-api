@@ -1,13 +1,13 @@
 const express = require('express')
 require('./db/mongoose')
-const user = require('./models/kyle-user')
+const User = require('./models/kyle-user')
 
 const app = express()
 const port = process.env.PORT || 3000
 
 app.use(express.json())
 
-app.post('/user', (req, res) => {
+app.post('/User', (req, res) => {
     const user = new User(req.body)
 
     user.save().then(() => {
