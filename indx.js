@@ -35,7 +35,7 @@ app.get('/userexs/:id', async (req, res) => {
 
             res.send(xlist)
     } catch (e) {
-        res.status(404).send()
+        res.send(e)
     }
 
 })
