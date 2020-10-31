@@ -11,7 +11,7 @@ const Xlist = mongoose.model('Xlist', {
         unique: true,
         type: String,
         trim: true,
-        lowercase: true,
+        lowercase: true
         // validate(value) {
         //     if (!validator.isEmail(value)) {
         //         throw new Error('Email is invalid')
