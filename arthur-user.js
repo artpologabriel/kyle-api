@@ -19,6 +19,14 @@ app.post('/user', (req, res) => {
     })
 })
 
+app.get('/viewusers', (req, res) => {
+    Kyle_user.find({}).then( (users) => {
+       res.send(users)
+    }).catch( (e) => {
+       res.send(e)
+    })   
+})
+
 app.get('/user/:id', async (req, res) => {
     const id = req.params.id
 
