@@ -17,7 +17,7 @@ app.post('/user', (req, res) => {
     })
 })
 
-app.get('/user/:id', (req, res) => {
+app.get('/user/:id', async (req, res) => {
     const id = req.params.id
 
     try {
