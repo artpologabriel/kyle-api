@@ -32,7 +32,7 @@ app.get('/user/:id', async (req, res) => {
 
 })
 
-app.post('/user-update', async (req, res) => {
+app.post('/userupdate', async (req, res) => {
     // const updates = Object.keys(req.body)
      const name  = req.body.name
      const email = req.body.email
