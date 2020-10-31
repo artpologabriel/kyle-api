@@ -34,11 +34,11 @@ app.get('/user/:id', async (req, res) => {
 
 app.post('/userupdate', async (req, res) => {
     // const updates = Object.keys(req.body)
-     const name  = req.body.name
+     const _id  = req.body._id
      const email = req.body.email
      const password = req.body.password
 
-    Kyle_user.findOneAndUpdate({name},  
+    Kyle_user.findOneAndUpdate({_id},  
         {email, password}, null, function (err, docs) { 
         if (err){ 
             console.log(err) 
