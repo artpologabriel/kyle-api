@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://127.0.0.1:27017/arthur_user', {
+mongoose.connect('mongodb://127.0.0.1:27017/xuser', {
     useNewUrlParser: true,
     useCreateIndex: true
 })
