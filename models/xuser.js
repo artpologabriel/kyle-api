@@ -13,16 +13,16 @@ const Xlist = mongoose.model('Kyle_user', {
         required: true,
         trim: true,
         lowercase: true,
-        validate(value) {
-            if (!validator.isEmail(value)) {
-                throw new Error('Email is invalid')
-            }
-        }
+        // validate(value) {
+        //     if (!validator.isEmail(value)) {
+        //         throw new Error('Email is invalid')
+        //     }
+        // }
     },
     date: {
         type: String,
         required: true,
-        // minlength: 7,
+        minlength: 7,
         trim: true,
         validate(value) {
             if (value.toLowerCase().includes('password')) {
