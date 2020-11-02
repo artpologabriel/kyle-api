@@ -47,12 +47,12 @@ router.delete('/userexs/:id', async (req, res) => {
 router.post('/userupdateex', async (req, res) => {
     // const updates = Object.keys(req.body)
      const _id  = req.body._id
-     const date = req.body.date
-     const reason = req.body.reason
+     const email = req.body.email
+     const password = req.body.password
      const name = req.body.name
 
     Xlist.findOneAndUpdate({_id},  
-        {reason, date , name}, null, function (err, docs) { 
+        {password, email , name}, null, function (err, docs) { 
         if (err){ 
             console.log(err) 
             res.status(400).send()

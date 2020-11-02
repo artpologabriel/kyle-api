@@ -7,21 +7,21 @@ const Xlist = mongoose.model('Xlist', {
         required: true,
         trim: true
     },
-    reason: {
+    email: {
         unique: true,
         type: String,
         trim: true,
-        lowercase: true
-        // validate(value) {
-        //     if (!validator.isEmail(value)) {
-        //         throw new Error('Email is invalid')
-        //     }
-        // }
+        lowercase: true,
+        validate(value) {
+            if (!validator.isEmail(value)) {
+                throw new Error('Email is invalid')
+            }
+        }
     },
-    date: {
+    password: {
         type: String,
         required: true,
-        // minlength: 7,
+         minlength: 7,
         trim: true,
         validate(value) {
             if (value.toLowerCase().includes('password')) {
