@@ -8,7 +8,7 @@ const Xlist = mongoose.model('Xlist', {
         trim: true
     },
     email: {
-        unique: true,
+        // unique: true,
         type: String,
         trim: true,
         lowercase: true,
