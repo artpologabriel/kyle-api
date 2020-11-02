@@ -11,12 +11,12 @@ app.use(express.json())
 app.post('/users', async (req, res) => {
     const user = new User(req.body)
 
-      try{
+    try {
         await user.save()
         res.status(201).send(user)
-      } catch (e) {
+    } catch (e) {
         res.status(400).send(e)
-      }
+    }
 })
 
 app.get('/users', async (req, res) => {
@@ -86,7 +86,7 @@ app.get('/tasks', async (req, res) => {
     }
 })
 
-app.get('/tasks/:id', (req, res) => {
+app.get('/tasks/:id', async (req, res) => {
     const _id = req.params.id
 
     try {
@@ -101,8 +101,6 @@ app.get('/tasks/:id', (req, res) => {
         res.status(500).send()
     }
 })
-
-
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
