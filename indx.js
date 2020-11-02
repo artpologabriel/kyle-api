@@ -40,6 +40,24 @@ app.get('/userexs/:id', async (req, res) => {
 
 })
 
+app.delete('/userexs/:id', async (req, res) => {
+    const _id = req.params.id
+
+    try {
+        const xlist = await Xlist.findByIdAndDelete(_id)
+
+                if (!xlist){
+                    return res.status(404).send()
+                }
+
+
+            res.send(xlist)
+    } catch (e) {
+        res.send(e)
+    }
+
+})
+
 app.post('/userupdateex', async (req, res) => {
     // const updates = Object.keys(req.body)
      const _id  = req.body._id
