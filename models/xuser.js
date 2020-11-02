@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
+const bcrypt = require('bcryptjs')
 
-const xlistSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -9,6 +10,7 @@ const xlistSchema = new mongoose.Schema({
     },
     email: {
         type: String,
+        required: true,
         trim: true,
         lowercase: true,
         validate(value) {
@@ -20,7 +22,7 @@ const xlistSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-         minlength: 7,
+        minlength: 7,
         trim: true,
         validate(value) {
             if (value.toLowerCase().includes('password')) {
@@ -39,15 +41,16 @@ const xlistSchema = new mongoose.Schema({
     }
 })
 
-xlistSchema.pre('save', async function(next){
-    const xlist  = this
-    
-    console.log('just before saving!')
+userSchema.pre('save', async function (next) {
+    const user = this
+
+    if (user.isModified('password')) {
+        user.password = await bcrypt.hash(user.password, 8)
+    }
 
     next()
-
 })
 
-const Xlist = mongoose.model('Xlist', xlistSchema)
+const User = mongoose.model('User', userSchema)
 
-module.exports = Xlist
+module.exports = User
