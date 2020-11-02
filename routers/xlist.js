@@ -2,14 +2,20 @@ const express = require ('express')
 const Xlist = require ('../models/xuser')
 const router = new express.Router()
 
-router.post('/userex', (req, res) => {
+router.post('/userex', async (req, res) => {
     const xlist = new Xlist(req.body)
     
-    xlist.save().then(() => {
-        res.send(xlist)
-    }).catch((e) => {
-        res.send(e)
-    })
+    // xlist.save().then(() => {
+    //     res.send(xlist)
+    // }).catch((e) => {
+    //     res.send(e)
+    // })
+    try{
+        await xlist.save()
+        res.status(201).send(e)
+    }catch (e){
+        res.status(404).send(e)
+    }
 })
 
 
