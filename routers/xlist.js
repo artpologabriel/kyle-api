@@ -12,9 +12,9 @@ router.post('/userex', async (req, res) => {
     // })
     try{
         await xlist.save()
-        res.status(201).send(e)
+        res.send(e)
     }catch (e){
-        res.status(404).send(e)
+        res.send(e)
     }
 })
 
