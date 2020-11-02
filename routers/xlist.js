@@ -8,7 +8,7 @@ router.post('/userex', (req, res) => {
     xlist.save().then(() => {
         res.send(xlist)
     }).catch((e) => {
-        res.status(400).send(e)
+        res.send(e)
     })
 })
 
