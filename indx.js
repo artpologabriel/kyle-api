@@ -6,13 +6,9 @@ const xlistRouter = require('./routers/xlist')
 
 
 const app = express()
-
 const port = process.env.PORT || 3000
-
 app.use(express.json())
 app.use(xlistRouter)
-
-
 
 
 app.get('/viewexs', (req, res) => {
@@ -22,6 +18,8 @@ app.get('/viewexs', (req, res) => {
        res.send(e)
     })   
 })
+
+
 
 
 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 
-const Xlist = mongoose.model('Xlist', {
+const xlistSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -38,5 +38,16 @@ const Xlist = mongoose.model('Xlist', {
         }
     }
 })
+
+xlistSchema.pre('save', async function(next){
+    const xlist  = this
+    
+    console.log('just before saving!')
+
+    next()
+
+})
+
+const Xlist = mongoose.model('Xlist', xlistSchema)
 
 module.exports = Xlist
