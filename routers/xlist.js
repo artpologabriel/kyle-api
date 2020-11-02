@@ -83,7 +83,7 @@ router.post('/userupdateex', async (req, res) => {
     try {
         const xlist = await Xlist.findById(req.params.id)
 
-        updates.forEach((update) => users[update] = req.body[update])
+        updates.forEach((update) => xlist[update] = req.body[update])
         await xlist.save()
 
         if (!user) {
