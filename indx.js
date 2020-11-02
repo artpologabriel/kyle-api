@@ -2,12 +2,16 @@ const express = require('express')
 
 require('./db/mongoose')
 const Xlist = require('./models/xuser')
+const xlistRouter = require('./routers/xlist')
 
 
 const app = express()
+
 const port = process.env.PORT || 3000
 
 app.use(express.json())
+app.use(xlistRouter)
+
 
 app.post('/userex', (req, res) => {
     const xlist = new Xlist(req.body)
