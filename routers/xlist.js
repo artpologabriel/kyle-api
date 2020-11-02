@@ -92,7 +92,7 @@ router.post('/userupdateex', async (req, res) => {
 
         res.send(users)
     } catch (e) {
-        res.status(400).send(e)
+        res.send(e)
     }
 })
 
