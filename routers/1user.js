@@ -2,6 +2,8 @@ const express = require('express')
 const User = require('../models/1user')
 const router = new express.Router()
 
+
+//add users
 router.post('/users', async (req, res) => {
     const user = new User(req.body)
 
@@ -13,6 +15,7 @@ router.post('/users', async (req, res) => {
     }
 })
 
+//see all users
 router.get('/users', async (req, res) => {
     try {
         const users = await User.find({})
@@ -22,6 +25,7 @@ router.get('/users', async (req, res) => {
     }
 })
 
+//see by users id
 router.get('/users/:id', async (req, res) => {
     const _id = req.params.id
 
@@ -38,6 +42,7 @@ router.get('/users/:id', async (req, res) => {
     }
 })
 
+//update users
 router.patch('/users/:id', async (req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['name', 'email', 'password', 'age']
@@ -60,6 +65,8 @@ router.patch('/users/:id', async (req, res) => {
     }
 })
 
+
+//delete users
 router.delete('/users/:id', async (req, res) => {
     try {
         const user = await User.findByIdAndDelete(req.params.id)
