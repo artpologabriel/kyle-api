@@ -1,6 +1,5 @@
 const express = require('express')
-const { update } = require('../models/1user')
-const User = require('../models/2user')
+const User = require('../models/usr')
 const router = new express.Router()
 
 
