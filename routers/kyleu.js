@@ -22,7 +22,7 @@ router.post('/users', async (req, res) => {
 
 
 
-//log in user
+//login user
 router.post('/users/login', async (req, res)=>{
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
@@ -47,7 +47,7 @@ router.post('/users/logout', auth , async (req,res)=> {
 })
 
 //log out all
-router.post('/users/logoutAll',auth,(req,res)=>{
+router.post('/users/logoutAll',auth, async(req,res)=>{
     try{
         req.user.tokens = []
         await req.user.save()
