@@ -1,7 +1,6 @@
 const express = require('express')
 const User = require('../models/kyleu')
 const auth = require ('../middleware/auth')
-const { remove } = require('../models/kyleu')
 const router = new express.Router()
 
 
