@@ -1,21 +1,21 @@
-const jwt = require ('jsonwebtoken')
-const User = require ('../models/kyleu')
+const jwt = require('jsonwebtoken')
+const User = require('../models/user')
 
-
-
-const auth = async (req , res , next) =>{
+const auth = async (req, res, next) => {
     try {
-        const token = req.header('authorization').replace('Bearer', '')
-        const decoded = jwt.verify(token , 'thisismynewcourse')
-        const user = await User.findOne({_id: decoded_id, 'tokens.token': token})
+        const token = req.header('Authorization').replace('Bearer ', '')
+        const decoded = jwt.verify(token, 'thisismynewcourse')
+        const user = await User.findOne({ _id: decoded._id, 'tokens.token': token })
 
-        if(!user){
+        if (!user) {
             throw new Error()
         }
+
         req.user = user
-    }catch (e) {
-        res.status(401).send({error : 'PLEASE AUTHENTICATE'})
-    }        
-    
+        next()
+    } catch (e) {
+        res.status(401).send({ error: 'Please authenticate.' })
+    }
 }
+
 module.exports = auth
