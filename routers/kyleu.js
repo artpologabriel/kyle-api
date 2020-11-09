@@ -25,7 +25,7 @@ router.post('/users/login', async (req, res) => {
     }
 })
 
-router.get('/users/me', auth, async (req, res) => {
+router.get('/users/me',  async (req, res) => {
     res.send(req.user)
 })
 
