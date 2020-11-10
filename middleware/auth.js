@@ -1,5 +1,4 @@
 const jwt = require ('jsonwebtoken')
-const { findOne } = require('../models/kyleu')
 const User = require('../models/kyleu')
 
 
