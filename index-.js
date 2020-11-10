@@ -6,6 +6,12 @@ const taskRouter = require('./routers/kylet')
 const app = express()
 const port = process.env.PORT || 3000
 
+
+
+app.user((req,res,next) => {
+    res.status(503).send('site is currently down . please comeback soon')
+})
+
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
