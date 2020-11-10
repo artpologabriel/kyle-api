@@ -11,7 +11,7 @@ const auth = async (req , res , next) => {
         if(!user){
             throw new Error()
         }
-        req.user = user
+        req.user = User
         next ()
     }catch (e){
         res.status(401).send({error : 'please log in'})
