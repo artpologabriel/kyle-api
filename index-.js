@@ -8,9 +8,9 @@ const port = process.env.PORT || 3000
 
 
 
-app.use((req,res,next) => {
-    res.status(503).send('site is currently down . please comeback soon')
-})
+// app.use((req,res,next) => {
+//     res.status(503).send('site is currently down . please comeback soon')
+// })
 
 app.use(express.json())
 app.use(userRouter)
