@@ -49,30 +49,25 @@ router.post('/users/logoutall',auth,async(req,res)=>{
     }
 })
 
-router.get('/users', auth ,async (req, res) => {
-    try {
-        const users = await User.find({})
-        res.send(users)
-    } catch (e) {
-        res.status(500).send()
-    }
+router.get('/users/me', auth ,async (req, res) => {
+    res.send(req.user)
 })
 
-router.get('/users/:id', async (req, res) => {
-    const _id = req.params.id
+// router.get('/users/:id', async (req, res) => {
+//     const _id = req.params.id
 
-    try {
-        const user = await User.findById(_id)
+//     try {
+//         const user = await User.findById(_id)
 
-        if (!user) {
-            return res.status(404).send()
-        }
+//         if (!user) {
+//             return res.status(404).send()
+//         }
 
-        res.send(user)
-    } catch (e) {
-        res.status(500).send()
-    }
-})
+//         res.send(user)
+//     } catch (e) {
+//         res.status(500).send()
+//     }
+// })
 
 router.patch('/users/:id', async (req, res) => {
     const updates = Object.keys(req.body)
