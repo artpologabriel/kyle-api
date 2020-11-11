@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema({
     }]
 })
 
-userSchema.methods.toJson = function (){
+userSchema.methods.toJSON = function (){
     const user = this
     const userObject = user.toObject()
 
