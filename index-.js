@@ -34,12 +34,12 @@ app.use(taskRouter)
 
 const Task = require('./models/kylet')
 
-    const task = await  Task.findById('5fae1ca80871cb1c3de0371a')
 
-    console.log(task)
 
 const main = async ( ) => {
+    const task = await Task.findById('5fae1ca80871cb1c3de0371a')
 
+    console.log(task)
 }
 
 main ()
