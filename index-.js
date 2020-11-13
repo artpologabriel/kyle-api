@@ -39,7 +39,9 @@ const Task = require('./models/kylet')
 const main = async ( ) => {
     const task = await Task.findById('5fae1ca80871cb1c3de0371a')
 
-    console.log(task)
+    await task.populate('owner').execPopulate()
+
+    console.log(task.owner)
 }
 
 main ()
