@@ -33,15 +33,20 @@ app.use(taskRouter)
 // myFunction()
 
 const Task = require('./models/kylet')
-
+const User = require('./models/kyleu')
 
 
 const main = async ( ) => {
-    const task = await Task.findById('5fae1ca80871cb1c3de0371a')
+    // const task = await Task.findById('5fae1ca80871cb1c3de0371a')
 
-    await task.populate('owner').execPopulate()
+    // await task.populate('owner').execPopulate()
 
-    console.log(task.owner)
+    // console.log(task.owner)
+
+    const user = await User.findById('5fae1b22dc5f1d1c1fb43113')
+    await user.populate('task').execPopulate()
+    console.log(user.task)
+
 }
 
 main ()
